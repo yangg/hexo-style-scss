@@ -2,7 +2,7 @@
 
 [![npm:](https://img.shields.io/npm/v/hexo-style-scss.svg?style=flat)](https://www.npmjs.com/packages/hexo-style-scss)
 
-Transform SCSS code in `<style type="text/scss">...</style>` to CSS
+Transform inline SCSS code `<style type="text/scss">...</style>` to CSS
 
 ## Installation
 
