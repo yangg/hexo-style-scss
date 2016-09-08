@@ -13,11 +13,13 @@ function scss2css(code) {
 }
 
 hexo.extend.filter.register('after_render:html', function(source){
-  var $ = cheerio.load(source);
+  var $ = cheerio.load(source, { decodeEntities: false });
+  let updated = false;
   $('style[type="text/scss"]').each(function() {
+    updated = true;
     var el = $(this);
     el.html(scss2css(el.html()));
     el.removeAttr('type');
   });
-  return $.html();
+  return updated ? $.html() : source;
 });
